@@ -2,7 +2,7 @@ class Snake < Formula
   desc "simple snake game. Written in pure java"
   homepage "http://silo.cs.indiana.edu:32903/snake/snakehome.html"
   url "http://silo.cs.indiana.edu:32903/snake/snake-1.0.2.tar.gz"
-  sha256 "8da49ab43bfa442fc21890c49cc317e7393aa2e82112b8cd55b19f2373e795a6"
+  sha256 "c6330df3385018a6f4ac33e8a42843f026280589110c4ca2f7409c8c1c62580c"
   depends_on "ant" => :build
   depends_on :java
   def install
