@@ -5,7 +5,7 @@ class Snake < Formula
   sha256 "e3e3535e47134c4712117dd5c2897e4d91582d8f57fb4aa90b29eff87c26bb4d"
   depends_on :java
   def install
-    system "ruby", "build", "compile", "jar"
+      system "ruby", "build.rb", "compile", "jar"
     mv "snake.jar", "#{prefix}/"
     bin.install "snake"
   end
