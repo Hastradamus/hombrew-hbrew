@@ -2,7 +2,7 @@ class Snake < Formula
   desc "simple snake game. Written in pure java"
   homepage "http://silo.cs.indiana.edu:32903/snake/snakehome.html"
   url "http://silo.cs.indiana.edu:32903/snake/snake-1.0.3.tar.gz"
-  sha256 "e3e3535e47134c4712117dd5c2897e4d91582d8f57fb4aa90b29eff87c26bb4d"
+  sha256 "b25ec2013cb03ecebb0d6b4380b4e2ca2a55477e8ce9c7e0c4bcb3a4083d91e7"
   depends_on :java
   def install
       system("ruby build.rb compile jar")
