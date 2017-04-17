@@ -2,7 +2,8 @@ import java.awt.*;
 import java.io.*;
 import javax.swing.*;
 import java.util.Scanner;
-import org.jasypt.util.text.*;
+import org.jasypt.util.text.BasicTextEncryptor;
+import java.util.NoSuchElementException;
 
 class Score{
   Color textColor = Color.WHITE;
@@ -168,9 +169,14 @@ class WriteScore{
     }
 
     static int getScoreFromFile(){
+        int i = 0;
         try{
             Scanner scannie = new Scanner(scoreFile);
-            int i = Integer.parseInt(textEncryptor.decrypt(scannie.next()));
+            try{
+            i = Integer.parseInt(textEncryptor.decrypt(scannie.next()));
+            } catch(NoSuchElementException e){
+                System.out.println(e.getMessage());
+            }
             scannie.close();
             return i;
         }
