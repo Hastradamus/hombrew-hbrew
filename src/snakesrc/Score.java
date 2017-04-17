@@ -37,8 +37,8 @@ class Score{
 class WriteScore{
     private static Point GAMEOVER_LOC = new Point(140, 200);
     private static String OS = System.getProperty("os.name").toLowerCase();
-    private static String saveLoc = "/Users/" + System.getProperty("user.name").concat("/.shs");
-    private static File scoreFile = new File(saveLoc);
+    public static String saveLoc = "/Users/" + System.getProperty("user.name").concat("/.shs");
+    public static File scoreFile = new File(saveLoc);
     static boolean newHighScore = false;
 
 
@@ -72,7 +72,7 @@ class WriteScore{
 
                     ///////text encryptor
                     PrintWriter printLn = new PrintWriter(scoreFile);
-                    printLn.printf("%s" + "%n", textEncryptor.encrypt(score));
+                    printLn.println(textEncryptor.encrypt(score));
                     printLn.close();
                     scannie.close();
                     newHighScore = true;
@@ -170,12 +170,17 @@ class WriteScore{
 
     static int getScoreFromFile(){
         int i = 0;
+        String fileContents;
         try{
             Scanner scannie = new Scanner(scoreFile);
             try{
-            i = Integer.parseInt(textEncryptor.decrypt(scannie.next()));
+            fileContents = scannie.next(); 
+            i = Integer.parseInt(textEncryptor.decrypt(fileContents));
             } catch(NoSuchElementException e){
-                System.out.println(e.getMessage());
+                PrintWriter p = new PrintWriter(scoreFile);
+                p.println(textEncryptor.encrypt("0"));
+                p.close();
+                return 0;
             }
             scannie.close();
             return i;
@@ -185,6 +190,75 @@ class WriteScore{
         }
         return -1;
     }
+    
+    static boolean initializeScoreFile(File f){
+        try{
+        PrintWriter p = new PrintWriter(f);
+        p.println(textEncryptor.encrypt("0"));
+        p.close();
+        return true;
+        } catch(FileNotFoundException e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
+
+    static void oldScoreEncrypt(File f){
+        String fileContents;
+        FileWriter fwriter;
+        Scanner s;
+        PrintWriter p;
+        try{
+            s = new Scanner(f);
+            p = new PrintWriter(f);
+        } catch(FileNotFoundException e){
+            System.out.println("file not found");
+            return;
+        }
+
+        try{
+            fileContents = s.next();
+        } catch(NoSuchElementException e){
+            System.out.println("there was nothing in the file");
+            return;
+        }
+        fileContents = textEncryptor.encrypt(fileContents);
+        p.println(fileContents);
+        s.close();
+        p.close();
+
+
+
+
+        /*
+        try{
+            fwriter = new FileWriter(f, true);
+            } catch(IOException e){
+                System.out.println("there was another error!!!!");
+                return;
+            }
+            PrintWriter p = new PrintWriter(fwriter);
+            try{
+                File file = new File(f);
+                s = new Scanner(file);
+            } catch(FileNotFoundException e){
+                System.out.println("the file was not found");
+                return;
+            }
+            try{
+                fileContents = s.next(); //get file contents
+                System.out.println(fileContents);
+                p.println(textEncryptor.encrypt(fileContents)); // rewrite the file contents back to the file but encrypted this time
+                p.close(); //close PrintWriter
+            } catch(NoSuchElementException e){
+                System.out.println("there is nothing in the file");
+                return;
+                // do nothing as there is nothing the file
+                // and initializeScoreFile(File f) will take care of it
+            }
+            */
+    }
+
     static boolean isWindows() {
         return (OS.indexOf("win") >= 0);
     }

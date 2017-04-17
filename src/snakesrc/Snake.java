@@ -206,7 +206,7 @@ public class Snake implements World{
       
       //BigBang 
       Snake s = new Snake();
-        game = new BigBang(resetSpeed, s);
+      game = new BigBang(resetSpeed, s);
       //JFrame
       frame = new JFrame("Snake");
       frame.getContentPane().add(game);
