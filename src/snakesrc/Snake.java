@@ -169,8 +169,15 @@ public class Snake implements World{
             ){
         frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
     }
-    if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_DOWN || e.getKeyCode() == KeyEvent.VK_LEFT
-            || e.getKeyCode() == KeyEvent.VK_RIGHT){
+    if (e.getKeyCode() == KeyEvent.VK_UP ||
+            e.getKeyCode() == KeyEvent.VK_DOWN || 
+            e.getKeyCode() == KeyEvent.VK_LEFT ||
+            e.getKeyCode() == KeyEvent.VK_RIGHT ||
+            e.getKeyCode() == KeyEvent.VK_W ||
+            e.getKeyCode() == KeyEvent.VK_A ||
+            e.getKeyCode() == KeyEvent.VK_S ||
+            e.getKeyCode() == KeyEvent.VK_D
+            ){
         displayStartScreen = false;
     }
   } // end keyPressed
