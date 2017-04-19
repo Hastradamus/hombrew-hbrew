@@ -108,14 +108,18 @@ public class Snake implements World{
   public void keyPressed(KeyEvent e) {
     if (!gameOver && Globals.keyOpp < 2){
 
-      if (e.getKeyCode() == KeyEvent.VK_RIGHT){
+      if (e.getKeyCode() == KeyEvent.VK_RIGHT ||
+                e.getKeyCode() == KeyEvent.VK_D
+              ){
           Globals.add(Globals.Dir.RIGHT);
           if(Globals.getDir() == Globals.Dir.LEFT) 
             if(Globals.dirls[0] == Globals.Dir.RIGHT){
                 Globals.chopHead();
             }
       }
-      else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
+      else if (e.getKeyCode() == KeyEvent.VK_LEFT || 
+          e.getKeyCode() == KeyEvent.VK_A
+              ){
             Globals.add(Globals.Dir.LEFT);
             if(Globals.getDir() == Globals.Dir.RIGHT)
                 if(Globals.dirls[0] == Globals.Dir.LEFT){
@@ -123,11 +127,11 @@ public class Snake implements World{
                 }
       }
       
-      else if (e.getKeyCode() == KeyEvent.VK_UP){
+      else if (e.getKeyCode() == KeyEvent.VK_UP || e.getKeyCode() == KeyEvent.VK_W){
             Globals.add(Globals.Dir.UP);
             if(Globals.getDir() == Globals.Dir.DOWN && Globals.dirls[0] == Globals.Dir.UP) Globals.chopHead();
       }
-      else if (e.getKeyCode() == KeyEvent.VK_DOWN){
+      else if (e.getKeyCode() == KeyEvent.VK_DOWN ||  e.getKeyCode() == KeyEvent.VK_S){
         if (Globals.dirls[Globals.keyOpp] != Globals.Dir.UP && Globals.getDir() != Globals.Dir.STOP)
             Globals.add(Globals.Dir.DOWN);
             if(Globals.getDir() == Globals.Dir.UP && Globals.dirls[0] == Globals.Dir.DOWN) Globals.chopHead();
