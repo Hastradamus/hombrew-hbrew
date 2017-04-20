@@ -219,7 +219,9 @@ class WriteScore{
         try{
             fileContents = s.next();
         } catch(NoSuchElementException e){
-            System.out.println("there was nothing in the file");
+            e.printStackTrace();
+            System.out.println(saveLoc);
+            System.out.println(222 + " there was nothing in the file");
             return;
         }
         fileContents = textEncryptor.encrypt(fileContents);
