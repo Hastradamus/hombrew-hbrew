@@ -37,7 +37,7 @@ class Score{
 class WriteScore{
     private static Point GAMEOVER_LOC = new Point(140, 200);
     private static String OS = System.getProperty("os.name").toLowerCase();
-    public static String saveLoc = "/Users/" + System.getProperty("user.name").concat("/.shs");
+    static String saveLoc = "/Users/" + System.getProperty("user.name").concat("/.shs");
     public static File scoreFile = new File(saveLoc);
     static boolean newHighScore = false;
 
@@ -46,7 +46,7 @@ class WriteScore{
 
     //text encryptor
     private static String encryptionPassword = "wha55up";
-    private static BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+    static BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
 
 
     static void init(){
@@ -55,7 +55,7 @@ class WriteScore{
             if (!scoreFile.exists()){
                 scoreFile.createNewFile();
                 PrintWriter println = new PrintWriter(scoreFile);
-                println.print(textEncryptor.encrypt("0"));
+                println.println(textEncryptor.encrypt("0"));
                 println.close();
             }
         }
