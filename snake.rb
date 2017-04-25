@@ -13,9 +13,9 @@ class Snake < Formula
     bin.install "snake"
     system "ruby", "build.rb", "osec"
     system "ruby", "build.rb", "extractjre"
-    mv "#{snakejar}", "#{prefix}/"
-    mv "#{jas}", "#{prefix}/"
-    mv "#{jre}", "#{prefix}/"
+    mv "snake.jar", "#{prefix}/"
+    mv "jasypt-1.9.2.jar", "#{prefix}/"
+    mv "jre1.8.0_131.jre", "#{prefix}/"
   end
   test do
     system "java", "-jar", "#{prefix}/snake.jar", "--version"
