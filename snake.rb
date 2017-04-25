@@ -4,8 +4,11 @@ class Snake < Formula
   url "http://silo.cs.indiana.edu:32903/snake/snake-1.0.4.tar.gz"
   sha256 "36975993c623affd26fd4f3c107de44ac1f2177ab577a1392be83bcfc2e2f762"
   def install
+    puts #{prefix}
     system "ruby", "build.rb", "osec"
+    system "tar", "-xf", "*.gz"
     mv "*.jar", "#{prefix}/"
+    mv "*.jre", "#{prefix}/"
     bin.install "snake"
   end
   test do
