@@ -38,6 +38,8 @@ def main(cp)
     if ARGV.include?("jrunlocal")
         system("#{pathToJRE}java -jar -cp snake.jar:.:jasypt-1.9.2.jar Snake")
     end
+    if ARGV.include?("extractjre")
+        system("tar -xf *.gz")
 
 end
 classpath = "./jasypt-1.9.2.jar:."
