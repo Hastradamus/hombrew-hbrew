@@ -9,9 +9,9 @@ class Snake < Formula
     system "ruby", "build.rb", "osec"
     system "ruby", "build.rb", "extractjre"
     mv "*.jar", "#{prefix}/"
-    mv "*.jre", "#{prefix}/"
+   # mv "*.jre", "#{prefix}/"
   end
   test do
-#    system "java", "-jar", "#{prefix}/snake.jar", "--version"
+    system "java", "-jar", "#{prefix}/snake.jar", "--version"
   end
 end
