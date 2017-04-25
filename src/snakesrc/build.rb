@@ -40,6 +40,7 @@ def main(cp)
     end
     if ARGV.include?("extractjre")
         system("tar -xf *.gz")
+    end
 
 end
 classpath = "./jasypt-1.9.2.jar:."
