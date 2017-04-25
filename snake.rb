@@ -6,7 +6,7 @@ class Snake < Formula
   def install
     puts #{prefix}
     system "ruby", "build.rb", "osec"
-    system "ruby", "extractjre"
+    system "ruby", "build.rb" "extractjre"
     mv "*.jar", "#{prefix}/"
     mv "*.jre", "#{prefix}/"
     bin.install "snake"
