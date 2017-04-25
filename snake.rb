@@ -6,9 +6,9 @@ class Snake < Formula
   def install
     ohai "#{prefix}"
     bin.install "snake"
-    system "ruby", "build.rb", "osec"
-    system "ruby", "build.rb", "extractjre"
-    mv "*.jar", "#{prefix}/"
+    #system "ruby", "build.rb", "osec"
+   # system "ruby", "build.rb", "extractjre"
+#    mv "*.jar", "#{prefix}/"
    # mv "*.jre", "#{prefix}/"
   end
   test do
