@@ -16,8 +16,9 @@ class Snake < Formula
     mv "snake.jar", "#{prefix}/"
     mv "jasypt-1.9.2.jar", "#{prefix}/"
     mv "jre1.8.0_131.jre", "#{prefix}/"
+    mv "snake.jar", "#{prefix}/"
   end
   test do
-    system "java", "-jar", "#{prefix}/snake.jar", "--version"
+    #system "java", "-jar", "#{prefix}/snake.jar", "--version"
   end
 end
