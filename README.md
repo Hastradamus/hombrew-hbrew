@@ -1,5 +1,3 @@
-install any of these formula's using homebrew with
+This is a repository for programs the I made that are installable via Homebrew for Mac. So far there is only thing here it is an app called Simple Snake. In Homebrew terms osx Apps are called 'Casks'. If you have homebrew then you can install simple snake with the following command
 
-`brew install hasahmed/hbrew/formula`
-so far the only formula here would be intalled with `brew install hasahmed/hbrew/snake`
-
+`brew cask install hasahmed/hbrew/simple-snake`
