@@ -1,4 +1,0 @@
-<app name="Simple Snake">
-    <jar name="simplesnake.jar" 
-        main-class="Snake"/>
-</app>

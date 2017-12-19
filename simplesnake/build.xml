@@ -7,7 +7,7 @@
     <property name="src" location="src"/>
     <property name="out" location="out"/>
     <property name="dist" location="dist"/>
-    <property name="lib" location="lib_local"/>
+    <property name="lib" location="lib"/>
     <property name="jasypt" value="jasypt-1.9.2.jar"/>
     <property name="manifest" value="Manifest.txt"/>
 
@@ -36,18 +36,6 @@
         <jar basedir="${out}" manifest="${manifest}" destfile="${dist}/jar/${ant.project.name}.jar">
             <zipgroupfileset dir="${lib}" />
         </jar> 
-    </target>
-
-    <target name='app' depends="jar">
-        <taskdef name='appbundler' 
-            classname='com.joshondesign.appbundler.BundlerTask'
-            classpath='build/classes;lib/XMLLib.jar'/>
-        <appbundler
-            bundle="bundle.xml"
-            target="mac"
-            destdir="dist"
-            libdir="dist/jar">
-        </appbundler>
     </target>
 
     <target name="clean"
