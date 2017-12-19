@@ -1,4 +1,4 @@
-class HomebrewHbrew < Formula
+class Snake < Formula
   desc "A simple snake game written in pure Java"
   homepage "http://pages.iu.edu/~hasahmed/snake/"
   url "https://github.com/hasahmed/homebrew-hbrew/releases/download/2.0.0/simplesnake.tar.gz"
