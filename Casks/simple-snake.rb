@@ -1,9 +1,9 @@
 cask 'simple-snake' do
   version "2.0.0"
-  sha256 "9886f049310dbcd6516b3bda081a082b7c86880251972f32a6b190bd3384257b"
+  sha256 "36b43494f7def3694c52107998ea2f746d1a7258e0af811ff8da2d5a2a9b04bb"
 
   # https://github.com/hasahmed/ was verified as official when first introduced to the cask
-  url "https://github.com/hasahmed/homebrew-hbrew/releases/download/2.0.0/simplesnake.tar.gz"
+  url "https://github.com/hasahmed/simple-snake/releases/download/v2.0.1/simple-snake.tar.gz"
   name 'Simple Snake'
   homepage "http://pages.iu.edu/~hasahmed/snake/"
   app 'Simple Snake.app'
