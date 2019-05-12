@@ -5,7 +5,7 @@ cask 'simple-snake' do
   # github.com/hasahmed/simple-snake/releases was verified as official when first introduced to the cask
   url 'https://github.com/hasahmed/simple-snake/releases/download/v2.0.1/simple-snake.tar.gz'
   name 'Simple Snake'
-  homepage 'http://pages.iu.edu/~hasahmed/snake/'
+  homepage 'http://pages.iu.edu/~hasahmed/simple-snake/'
 
   app 'Simple Snake.app'
 end
